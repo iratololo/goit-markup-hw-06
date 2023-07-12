@@ -1,0 +1,962 @@
+/*____________________ЗМІННІ___________________________*/
+
+:root {
+
+    /*____________________COLOR___________________________*/
+    --iris: #4d5ae5;
+    --ocean: #404bbf;
+    --navyBlue: #2e2f42;
+    --green: #31d0aa;
+    --slate: #434455;
+    --lightSlate: #8E8F99;
+    --cornflower: #E7E9FC;
+    --cloud: #F4F4FD;
+    --navyBlueModal: rgba(46, 47, 66, 0.4);
+    --grey: #2e2f42b3;
+    --white: #ffffff;
+    --dairy: #FCFCFC;
+
+/*____________________FONTS___________________________*/
+
+    --logoFont: "Raleway", sans-serif;
+
+
+/*____________________ANIMATION___________________________*/
+
+    --duration: 250ms;
+    --timingFunction: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    /*____________________FLEX___________________________*/
+    --items: 3;
+    --indent-column: 24px;
+    --indent-row: var(--indent-column);
+
+}
+
+
+/*____________________ЗАГАЛЬНІ НАЛАШТУВАННЯ___________________________*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--white);
+    color: var(--slate);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.list {
+    list-style-type: none;
+}
+
+.link {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.container {
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+/*____________________FLEX___________________________*/
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--indent-row);
+    column-gap: var(--indent-column);
+}
+
+.card-set-item {
+    flex-basis: calc((100% - var(--indent-column) * (var(--items) - 1)) / var(--items));
+}
+
+
+
+/*____________________СПІЛЬНІ НАЛАШТУВАННЯ___________________________*/
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.section-title:not(:last-child) {
+    margin-bottom: 72px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--navyBlue);
+    letter-spacing: 0.02em;
+}
+
+.subtitle:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.card-info {
+    padding: 32px 16px;
+}
+
+/*____________________СПІЛЬНІ НАЛАШТУВАННЯ - EЛЕМЕНТИ ФОРМИ___________________________*/
+
+.button {
+    /* font-family: "Roboto", sans-serif; */
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.5;
+    /* display: inline-block; */
+    display: block;
+    border-radius: 4px;
+    /* transition: background-color var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction), border-color var(--duration) var(--timingFunction); */
+}
+
+.input {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+    outline: transparent;
+    transition: border-color var(--duration) var(--timingFunction);
+}
+
+.input::placeholder {
+    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-family: inherit;
+    transition: transform var(--duration) var(--timingFunction);
+}
+
+.input:focus {
+    border-color: var(--iris);
+}
+
+.input:focus::placeholder {
+    transform: translate(-100%, 0);
+}
+
+
+/*____________________СПІЛЬНІ НАЛАШТУВАННЯ - SOCIAL___________________________*/
+
+
+.social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-item {}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--iris);
+    transition: background-color var(--duration) var(--timingFunction);
+}
+
+.social-icon {
+    fill: var(--cloud);
+}
+
+
+
+/*____________________HEADER___________________________*/
+
+.header {
+    border-bottom: 1px solid var(--cornflower);
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 76px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    /* column-gap: 76px; */
+}
+
+.logo {
+    font-family: var(--logoFont);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: var(--iris);
+    letter-spacing: 0.03em;
+    margin-right: 76px;
+}
+
+.logo-decor {
+    color: var(--navyBlue);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    /* column-gap: 40px; */
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+}
+
+.menu-link,
+.contacts-link {
+    transition: color var(--duration) var(--timingFunction);
+}
+
+.menu-link {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--navyBlue);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding: 24px 0;
+    position: relative;
+}
+
+.menu-link-active::after {
+ content: "";
+ position: absolute;
+ bottom: -1px;
+ left: 0;
+ width: 100%;
+ height: 4px;
+ border-radius: 2px;
+ background-color: var(--ocean);
+}
+
+.menu-link-active,
+.menu-link:hover,
+.menu-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
+    color: var(--ocean);
+}
+
+.contacts-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    /* column-gap: 40px; */
+    /* row-gap: 20px; */
+    gap: 40px;
+}
+
+.contacts-link {
+    color: var(--slate);
+}
+
+
+/*____________________HERO___________________________*/
+
+.hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/hero/bg.jpg);
+    background-color: var(--navyBlue);
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    padding: 188px 0;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.main-title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    max-width: 496px;
+    margin: 0 auto;
+}
+
+.main-title:not(:last-child) {
+   margin-bottom: 48px;
+}
+
+.button-main {
+    color: var(--white);
+    background-color: var(--iris);
+    padding: 16px 32px;
+    min-width: 169px;
+    margin: 0 auto;
+    transition: background-color var(--duration) var(--timingFunction);
+}
+
+.button-main:hover,
+.button-main:focus {
+    background-color: var(--ocean);
+}
+
+
+/*____________________BENEFITS___________________________*/
+
+.benefits {
+   
+}
+
+.benefits-list {
+    --items: 4;
+    /* gap: 24px; */
+}
+
+.benefits-item {
+   /* flex-basis: calc((100% - 3 * 24px) / 4); */
+}
+
+.benefits-wrap-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 24px 100px; */
+    height: 112px;
+    background-color: var(--cloud);
+    border-radius: 4px;
+}
+
+.benefits-wrap-icon:not(:last-child) {
+   margin-bottom: 8px;
+}
+
+.benefits-icon {}
+
+
+
+
+
+/*____________________SPECIALTY___________________________*/
+
+.specialty {
+    padding-top: 0;
+}
+
+
+
+
+/*____________________TEAM___________________________*/
+
+.team {
+    background-color: var(--cloud);
+    text-align: center;
+}
+
+.team-list {
+    --items: 4;
+    /* gap: 24px; */
+}
+
+.team-item {
+    background-color: var(--white);
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.team-card-info {
+    padding: 32px 0px;
+}
+
+.team-text:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.team-social-list {
+    justify-content: center;
+    gap: 24px;
+}
+
+.team-social-link {
+
+}
+
+.team-social-link:hover, .team-social-link:focus {
+    background-color: var(--ocean);
+}
+
+
+
+
+/*____________________CUSTOMERS___________________________*/
+
+.customers {}
+
+.customers-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.customers-item {}
+
+.customers-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 168px;
+    width: 168px;
+    height: 88px;
+    border: 1px solid var(--lightSlate);
+    border-radius: 4px;
+    transition: border-color var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction);
+    color: var(--lightSlate);
+}
+
+.customers-link:hover, 
+.customers-link:focus {
+    border-color: var(--ocean);
+    color: var(--ocean);
+}
+
+.customers-icon {
+    fill: currentColor;
+}
+
+
+
+/*____________________FOOTER___________________________*/
+
+.footer {
+    background-color: var(--navyBlue);
+    padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.footer-info {
+    flex-basis: 264px;
+}
+
+.footer-social {
+    flex-basis: 208px;
+}
+
+.footer-info:not(:last-child) {
+    margin-right: 120px;
+}
+.footer-social:not(:last-child) {
+    margin-right: 80px;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.footer-logo:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    color: var(--cloud);
+    max-width: 264px;
+}
+
+.footer .logo-decor {
+    color: var(--cloud);
+}
+
+.footer-text-weight {
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer-text-weight:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    gap: 16px;
+}
+
+.footer-social-link {}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--green);
+}
+
+
+/*____________________FOOTER-FORM___________________________*/
+
+
+.footer-subscription {
+    flex-basis: 453px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-form-label {
+    flex-basis: 264px;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+}
+
+.footer-form-input {
+    color: var(--white);
+    border: 1px solid var(--white);
+    font-size: 12px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.footer-form-input::placeholder {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--white);
+}
+
+.footer-form-btn {
+    min-height: 40px;
+    flex-basis: 165px;
+    min-width: 165px;
+    /* flex-shrink: 1; */
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 16px; */
+    color: var(--white);
+    background-color: var(--iris);
+    padding: 8px 24px;
+    transition: background-color var(--duration) var(--timingFunction);
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+    background-color: var(--ocean);
+}
+
+.footer-form-svg {
+    fill: currentColor;
+    flex-basis: 24px;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+
+/*____________________FILTER / PORTFOLIO___________________________*/
+
+.portfolio {
+    padding-top: 96px;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.filter:not(:last-child) {
+    margin-bottom: 72px;
+}
+
+.filter-btn {
+    color: var(--iris);
+    background-color: var(--cloud);
+    padding: 12px 24px;
+    border: 1px solid var(--cornflower);
+    transition: background-color var(--duration) var(--timingFunction), color var(--duration) var(--timingFunction), border-color var(--duration) var(--timingFunction);
+}
+
+
+.filter-btn-active,
+.filter-btn:hover,
+.filter-btn:focus
+ {
+    color: var(--white);
+    background-color: var(--ocean);
+    /* border: 1px solid transparent; */
+    border-color: transparent;
+}
+
+.content {
+    --indent-row: 48px;
+}
+
+.card {
+    transition: box-shadow var(--duration) var(--timingFunction);
+}
+
+.card:hover,
+.card:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+
+.card-head {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img {}
+
+.card-overlay {
+    padding: 40px 32px;
+    background-color: var(--iris);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    order: 2;
+    transition: top var(--duration) var(--timingFunction);
+}
+
+.card:hover .card-overlay,
+.card:focus .card-overlay {
+    top: 0;
+}
+
+.text-card-overlay {
+    color: var(--cloud);
+}
+
+.portfolio-card-info {
+    border: 1px solid var(--cornflower);
+    border-top: none;
+}
+
+
+
+
+/*____________________MODAL___________________________*/
+
+.modal {
+    
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--navyBlueModal);
+    z-index: 99;
+    transition: opacity var(--duration) var(--timingFunction), visibility var(--duration) var(--timingFunction);
+}
+
+.modal-overlay.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-window {
+    padding: 72px 24px 24px;
+    width: 408px;
+    min-height: 584px;
+    background-color: var(--dairy);
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--duration) var(--timingFunction);
+}
+
+.modal-overlay.is-hidden .modal-window {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+
+.modal-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: var(--cornflower);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color var(--duration) var(--timingFunction), border var(--duration) var(--timingFunction);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: var(--ocean);
+    border: none;
+}
+
+.modal-icon {
+    fill: var(--navyBlue);
+    transition: fill var(--duration) var(--timingFunction);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+    fill: var(--white);
+}
+
+
+
+.modal-title {
+    text-align: center;
+    font-weight: 500;
+    color: var(--navyBlue);
+    margin-bottom: 16px;
+}
+
+/*____________________MODAL-FORM___________________________*/
+
+.modal-form {}
+
+
+.modal-form-item {
+    margin-bottom: 8px;
+}
+
+
+.form-item-text {
+    margin-bottom: 16px;
+}
+
+
+.modal-form-label {
+    color: var(--lightSlate);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    display: block;
+}
+
+.modal-form-label:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+
+.input-wrap {
+    position: relative;
+}
+
+.modal-form-input {
+    color: var(--navyBlue);
+    border: 1px solid var(--navyBlueModal);
+    padding: 8px 38px;
+}
+
+.textarea {
+    font-size: 12px;
+    line-height: 1.17;
+    min-height: 120px;
+    padding: 8px 16px;
+    resize: none;
+    color: var(--navyBlueModal);
+}
+
+.textarea::placeholder {
+    color: var(--navyBlueModal);
+}
+
+.modal-form-svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    fill: var(--navyBlue);
+    transition: fill var(--duration) var(--timingFunction);
+}
+
+.modal-form-input:focus+.modal-form-svg {
+    fill: var(--iris);
+}
+
+
+
+.modal-form-accord {
+    position: relative;
+}
+
+
+.modal-form-accord:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.modal-checkbox-label {
+    /* position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px; */
+}
+
+/* .modal-checkbox-label::before {
+    content: "";
+    flex-basis: 16px;
+    height: 16px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid var(--navyBlueModal);
+    background-color: transparent
+    transition: border-color var(--duration) var(--timingFunction), background-color var(--duration) var(--timingFunction);
+} */
+
+.modal-form-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
+.checkbox-label-wrap {
+    margin-right: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    fill: transparent;
+    border: 1px solid var(--navyBlueModal);
+    background-color: transparent;
+    transition: border var(--duration) var(--timingFunction), background-color var(--duration) var(--timingFunction), fill var(--duration) var(--timingFunction);
+}
+
+.modal-form-checkbox:checked + .modal-checkbox-label>.checkbox-label-wrap {
+    background-color: var(--ocean);
+    border: none;
+    fill: var(--cloud);
+}
+
+
+
+
+
+.modal-form-link {
+    color: var(--iris);
+    transition: color var(--duration) var(--timingFunction);
+}
+
+.modal-form-link:hover,
+.modal-form-link:focus {
+    color: var(--ocean);
+}
+
+
+.modal-form-btn {
+    margin: 0 auto;
+    min-height: 56px;
+    min-width: 169px;
+    padding: 16px 32px;
+    background-color: var(--iris);
+    color: var(--white);
+    transition: background-color var(--duration) var(--timingFunction);
+}
+
+.modal-form-btn:hover, 
+.modal-form-btn:focus {
+    background-color: var(--ocean);
+}
