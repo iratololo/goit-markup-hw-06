@@ -748,6 +748,24 @@ img {
    
 }
 
+/* .benefits-subtitle */
+
+
+@media only screen and (max-width: 767.98px) {
+.benefits-subtitle {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1157.98px) {
+.benefits-subtitle  {
+    font-weight: 700;
+  }
+  .benefits .text {
+    font-weight: 500;
+  }
+}
+
 .benefits-list {
     --items: 1;
 }
@@ -895,7 +913,7 @@ img {
 
 
 .customers-list {
-    --items: 1;
+    --items: 2;
     /* --indent-column: 16px; */
     align-items: center;
 }
@@ -913,12 +931,6 @@ img {
     /* flex-grow: 1; */
 }
 
-
-@media only screen and (min-width: 428px) {
-    .customers-list {
-        --items: 2;
-    }
-}
 
 
 @media only screen and (min-width: 768px) {
