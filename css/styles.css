@@ -32,10 +32,6 @@
     --indent-column: 24px;
     --indent-row: 72px;
 
-    /* @media only screen and (min-width: 768px) and (max-width: 1157.98px) {
-        --indent-row: 72px;
-    } */
-
     @media only screen and (min-width: 1158px) {
             --indent-row: var(--indent-column);
         }
@@ -133,11 +129,10 @@ img {
 
 .container {
     max-width: 428px;
-    /* max-width: 1158px; */
     min-width: 320px;
     margin: 0 auto;
     padding: 0 16px;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -453,9 +448,21 @@ img {
 
 
 
-.menu-toggle-icon {
+.navigation .menu-toggle .menu-toggle-icon {
     stroke: var(--navyBlue);
-    transition: stroke var(--duration) var(--timingFunction), fill var(--duration) var(--timingFunction);
+    transition: stroke var(--duration) var(--timingFunction);
+}
+
+.navigation .menu-toggle:hover .menu-toggle-icon,
+.navigation .menu-toggle:focus .menu-toggle-icon {
+    stroke: var(--ocean);
+}
+
+
+@media only screen and not (:hover) {
+    .navigation .menu-toggle:active .menu-toggle-icon{
+        stroke: var(--ocean);
+    }
 }
 
 
@@ -486,12 +493,6 @@ img {
 .menu-toggle:focus {
     background-color: rgba(0, 0, 0, 0.1);
 } */
-
-@media only screen and not (:hover) {
-    .menu-toggle:active {
-        background-color: var(--ocean);
-    }
-}
 
 .menu-container {
     display: flex;
@@ -524,6 +525,7 @@ img {
 .menu-container .menu-toggle .menu-toggle-icon,
 .menu-container .menu-toggle .menu-toggle-icon {
     fill: var(--navyBlue);
+    transition: fill var(--duration) var(--timingFunction);
 }
 
 .menu-container .menu-toggle:hover .menu-toggle-icon,
@@ -570,14 +572,17 @@ img {
 
 
 .mobile-menu-link-active,
-.mobile-menu-link:active {
+.mobile-menu-link:hover, 
+.mobile-menu-link:focus {
     color: var(--ocean);
 }
 
+@media only screen and not (:hover) {
+    .mobile-menu-link:active {
+        color: var(--ocean);
+    }
+}
 
-/* .mobile-contacts:not(:last-child) {
-    margin-bottom: 48px;
-} */
 
 .mobile-contacts-list {}
 
@@ -728,6 +733,12 @@ img {
 .button-main:hover,
 .button-main:focus {
     background-color: var(--ocean);
+}
+
+@media only screen and not (:hover) {
+    .button-main:active {
+        background-color: var(--ocean);
+    }
 }
 
 
